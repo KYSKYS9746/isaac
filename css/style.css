@@ -261,22 +261,37 @@
     font-weight: 400;
 }
 
-.toTop {
-    position: fixed;
-    right: 100px;
-    bottom: 100px;
-    z-index: 999;
+.mainEvent {
+    position: relative;
 }
 
-.toTop i {
-    
-    background: #FF281E;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 50%;
-    color: #fff;
-    cursor: pointer;
 
+.mainEvent .arrows1 {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1400px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.mainEvent .arrows1 i {
+    position: absolute;
+    top: 0;
+    transform: translate(0, -50%);
+
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.mainEvent .arrows1 .left{
+    left: 0;
+}
+
+.mainEvent .arrows1 .right{
+    right: 0;
 }
 
 .footer .sns{
@@ -307,4 +322,36 @@
 .ft1 span {
     font-size: 18px;
     font-weight: 400;
+}
+
+.toTop {
+    position: fixed;
+    right: 100px;
+    bottom: 100px;
+    z-index: 999;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+
+    background: transparent;
+    border: none;
+
+}
+
+.toTop.on { 
+
+    visibility: visible;
+    opacity: 1;
+}
+
+.toTop i {
+    
+    background: #FF281E;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+
 }

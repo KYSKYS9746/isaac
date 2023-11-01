@@ -57,15 +57,33 @@ $(function(){
     });
 
     $('.mainEvent .productSlide').slick({
+        arrows: false, 
         slidesToShow: 3,
     })
+
+    $('.mainEvent .arrows1 .left').on('click', function(){
+        $('.productSlide').slick('slickPrev')
+    });
+
+    $('.mainEvent .arrows1 .right').on('click', function(){
+        $('.productSlide').slick('slickNext')
+    });
 
     $('.toTop').on('click', function(){
         $('html, body').animate({scrollTop:0})
     })
 
-});
+    $(window).on('scroll', function(){
+        const sct = $(window).scrollTop();
+        if ( sct > 200) {
+            $('.toTop').addClass('on');
+              
+        } else {
+            $('.toTop').removeClass('on');
+        }
+    })
 
+});
 
 
 // 이름이 있는 자료 객체
